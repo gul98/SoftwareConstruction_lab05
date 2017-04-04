@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ 
+  <class name="City" table="Country">
+    <id column="locId" name="locId" type="int">
+      <generator class="assigned"/>
+    </id>
+    <property column="country" name="country">
+                      
+                  </property>
+    <property column="lat" name="lat" type="double"/>
+    <property column="lng" name="lng" type="double"/>
+  </class>
+</hibernate-mapping>

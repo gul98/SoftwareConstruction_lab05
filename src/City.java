@@ -8,15 +8,41 @@
  *
  * @author gul
  */
-public class City {
-    public int id;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-    public void setId(int id) {
-        this.id = id;
+@Entity
+@Table (name="Country")
+
+public class City {
+    @Id
+    @Column(name="locId")
+    public int locId;
+    @Column(name="country")
+    public String country;
+    @Column(name="lat")
+    public double lat;
+    @Column(name="lng")
+    public double lng;
+
+    public City(){
+        
+    }
+    
+    public City(int locId, String country, double lat, double lng){
+        this.locId=locId;
+        this.country=country;
+        this.lat=lat;
+        this.lng=lng;
+    }
+    public void setLocId(int locId) {
+        this.locId = locId;
     }
 
-    public void setCountryName(String countryName) {
-        this.countryName = countryName;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public void setLat(double lat) {
@@ -27,12 +53,12 @@ public class City {
         this.lng = lng;
     }
 
-    public int getId() {
-        return id;
+    public int getLocId() {
+        return locId;
     }
 
-    public String getCountryName() {
-        return countryName;
+    public String getCountry() {
+        return country;
     }
 
     public double getLat() {
@@ -42,16 +68,6 @@ public class City {
     public double getLng() {
         return lng;
     }
-    public String countryName;
-    public double lat;
-    public double lng;
     
-    public City(){}
-    public City(int id , String countryName, double lat, double lng){
-        this.id=id;
-        this.countryName=countryName;
-        this.lat=lat;
-        this.lng=lng;
-    }
     
 }
